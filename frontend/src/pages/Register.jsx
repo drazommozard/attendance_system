@@ -15,7 +15,7 @@ export default function Register() {
 
         try {
             // Adjust this URL if your Django registration endpoint points elsewhere
-            await axios.post('http://127.0.0.1:8000/api/register/', formData);
+            await axios.post('https://attendance-system-lpuy.onrender.com/api/register/', formData);
 
             setMessage('Account created successfully! Redirecting to login...');
             setTimeout(() => {

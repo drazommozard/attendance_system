@@ -26,7 +26,7 @@ export default function SettingsPanel() {
     useEffect(() => {
         const fetchCurrentSettings = async () => {
             try {
-                const response = await axios.get('http://127.0.0.1:8000/api/admin/settings/', {
+                const response = await axios.get('https://attendance-system-lpuy.onrender.com/api/admin/settings/', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 setSettings(response.data);
@@ -45,7 +45,7 @@ export default function SettingsPanel() {
         setSettingsMessage('');
         setSettingsError('');
         try {
-            const response = await axios.put('http://127.0.0.1:8000/api/admin/settings/', settings, {
+            const response = await axios.put('https://attendance-system-lpuy.onrender.com/api/admin/settings/', settings, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             setSettingsMessage(response.data.message || 'Settings updated successfully!');
@@ -64,7 +64,7 @@ export default function SettingsPanel() {
             return;
         }
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/admin/promote/',
+            const response = await axios.post('https://attendance-system-lpuy.onrender.com/api/admin/promote/',
                 { username: promoUsername },
                 { headers: { 'Authorization': `Bearer ${token}` } }
             );

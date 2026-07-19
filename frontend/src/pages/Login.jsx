@@ -17,7 +17,7 @@ export default function Login() {
 
         try {
             // Send login request to full backend host
-            const response = await axios.post('http://127.0.0.1:8000/api/login/', {
+            const response = await axios.post('https://attendance-system-lpuy.onrender.com/api/login/', {
                 username,
                 password,
             });

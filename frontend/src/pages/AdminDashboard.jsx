@@ -16,7 +16,7 @@ export default function AdminDashboard() {
             try {
                 const token = localStorage.getItem('access_token');
 
-                const response = await axios.get('http://127.0.0.1:8000/api/admin/daily-log/', {
+                const response = await axios.get('https://attendance-system-lpuy.onrender.com/api/admin/daily-log/', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -44,7 +44,7 @@ export default function AdminDashboard() {
             const token = localStorage.getItem('access_token');
 
             // Build the URL, attaching dates if the user selected them
-            let url = 'http://127.0.0.1:8000/api/admin/export-csv/';
+            let url = 'https://attendance-system-lpuy.onrender.com/api/admin/export-csv/';
             const params = new URLSearchParams();
             if (exportStartDate) params.append('start_date', exportStartDate);
             if (exportEndDate) params.append('end_date', exportEndDate);
